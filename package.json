@@ -1,0 +1,45 @@
+{
+  "name": "ecommerce-backend",
+  "version": "1.0.2",
+  "type": "module",
+  "description": "Express TypeScript backend scaffold.",
+  "license": "ISC",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "nodemon --exec tsx src/server.ts",
+    "build": "npm run lint && tsc",
+    "lint": "eslint src",
+    "start": "node dist/server.js",
+    "db:generate": "drizzle-kit generate --config src/drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config src/drizzle.config.ts",
+    "db:seed": "tsx src/db/seed/index.ts",
+    "db:reset:dev": "cross-env NODE_ENV=development tsx src/db/resetDb.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.9.9",
+    "@typescript-eslint/eslint-plugin": "^8.55.0",
+    "@typescript-eslint/parser": "^8.55.0",
+    "drizzle-kit": "^0.31.10",
+    "drizzle-orm": "^0.45.2",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11",
+    "postgres": "^3.4.9",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "allowScripts": {
+    "esbuild@0.27.2": true
+  }
+}

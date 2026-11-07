@@ -1,0 +1,11 @@
+node_modules
+.env
+dist
+migrations
+docker-compose.yml
+Dockerfile*
+eslint.config.mjs
+tsconfig.json
+Test.ts
+.dockerignore
+drizzle.config.ts
